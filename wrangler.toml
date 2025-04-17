@@ -1,0 +1,11 @@
+name = "sipstore"
+compatibility_date = "2023-08-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sipstore_db"
+database_id = "ce52610d-e503-40c8-ab40-22306964e7c5"  # Ganti dengan ID database Anda
+
+[build]
+command = "npm run build"
+publish = "dist"
