@@ -34,3 +34,6 @@ export default {
     return env.ASSETS.fetch(request)
   },
 } satisfies ExportedHandler<Env>
+export interface Fetcher {
+  fetch(request: Request): Promise<Response>
+}
