@@ -6,7 +6,7 @@ export default {
   fetch(request, env) {
     const url = new URL(request.url)
 
-    if (url.pathname.startsWith('/api/events')) {
+    if (url.pathname.startsWith('/api/sipstore')) {
       return Response.json([
         {
           id: '1',
