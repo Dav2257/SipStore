@@ -6,7 +6,6 @@ command = "npm run build"
 
 [site]
 bucket = "dist"
-entry-point = "functions"
 
 [[d1_databases]]
 binding = "DB"
