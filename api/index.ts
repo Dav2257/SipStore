@@ -3,30 +3,32 @@ interface Env {
 }
 
 export default {
-  fetch(request, env) {
+  fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
 
     if (url.pathname.startsWith('/api/sipstore')) {
-      return Response.json([
-        {
-          id: '1',
-          name: 'event 1',
-          place: 'pandaan',
-          time: 1741247092,
-        },
-        {
-          id: '2',
-          name: 'event 2',
-          place: 'sukorejo',
-          time: 1741246092,
-        },
-        {
-          id: '3',
-          name: 'event 3',
-          place: 'purwosari',
-          time: 1741245092,
-        },
-      ])
+      return Promise.resolve(
+        Response.json([
+          {
+            id: '1',
+            name: 'event 1',
+            place: 'pandaan',
+            time: 1741247092,
+          },
+          {
+            id: '2',
+            name: 'event 2',
+            place: 'sukorejo',
+            time: 1741246092,
+          },
+          {
+            id: '3',
+            name: 'event 3',
+            place: 'purwosari',
+            time: 1741245092,
+          },
+        ]),
+      )
     }
 
     return env.ASSETS.fetch(request)
